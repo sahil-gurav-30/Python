@@ -1,6 +1,6 @@
- print("Name   : Sahil Gurav")
- print("USN    : 1AY24AI093")
- print("Section: O\n")
+print("Name   : Sahil Gurav")
+print("USN    : 1AY24AI093")
+print("Section: O\n")
 def displayInventory(inventory):
     print("Inventory:")
     total_items = 0
