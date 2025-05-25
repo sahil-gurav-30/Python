@@ -1,48 +1,49 @@
+                                        
+print("Name   : Sahil Gurav")
+print("USN    : 1AY24AI093")
+print("Section: O")
+import random
 import time
-import copy
- print("Name   : Sahil Gurav")
- print("USN    : 1AY24AI093")
- print("Section: O\n")
-grid = [
-    [0, 0, 0, 0, 0, 0],  
-    [0, 0, 1, 0, 0, 0],  
-    [0, 0, 1, 1, 0, 0],  
-    [0, 1, 1, 0, 0, 0],  
-    [0, 0, 0, 0, 0, 0],  
-    [0, 0, 0, 0, 0, 0]   
-]
-ROWS = 6
-COLS = 6
-def print_grid(g):
-    for row in g:
-        print("".join([' ' if cell else ' ' for cell in row]))
-    print("\n" + "-" * COLS)
-
-def count_neighbors(g, x, y):
+import os
+WIDTH = 20
+HEIGHT = 10
+GENERATIONS = 3
+def create_grid():
+ return [[random.choice([' ', '█']) for _ in range(WIDTH)] for _ in range(HEIGHT)]
+ def print_grid(grid, generation):
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print(f"Generation {generation}")
+    for row in grid:
+        print(''.join(row))
+ def count_neighbors(grid, x, y):
+    directions = [(-1, -1), (-1, 0), (-1, 1),
+                  (0, -1),          (0, 1),
+                  (1, -1),  (1, 0),  (1, 1)]
     count = 0
-    for dx in [-1, 0, 1]:
-        for dy in [-1, 0, 1]:
-            if dx == 0 and dy == 0:
-                continue
-            nx, ny = x + dx, y + dy
-            if 0 <= nx < ROWS and 0 <= ny < COLS:
-                count += g[nx][ny]
+    for dx, dy in directions:
+        nx, ny = x + dx, y + dy
+        if 0 <= nx < HEIGHT and 0 <= ny < WIDTH:
+            if grid[nx][ny] == '█':
+                count += 1
     return count
-def next_gen(current):
-    new_grid = copy.deepcopy(current)
-    for x in range(ROWS):
-        for y in range(COLS):
-            neighbors = count_neighbors(current, x, y)
-            if current[x][y] == 1:
-                if neighbors < 2 or neighbors > 3:
-                    new_grid[x][y] = 0 
+ def next_generation(grid):
+    new_grid = [[' ' for _ in range(WIDTH)] for _ in range(HEIGHT)]
+    for i in range(HEIGHT):
+        for j in range(WIDTH):
+            neighbors = count_neighbors(grid, i, j)
+            if grid[i][j] == '█':
+                if neighbors in [2, 3]:
+                    new_grid[i][j] = '█'
             else:
                 if neighbors == 3:
-                    new_grid[x][y] = 1  
+                    new_grid[i][j] = '█'
     return new_grid
-generations = 4
-for i in range(generations):
-    print(f"Generation {i + 1}:")
-    print_grid(grid)
-    time.sleep(1)
-    grid = next_gen(grid)
+ grid = create_grid()
+ try:
+    for generation in range(1, GENERATIONS + 1):
+        print_grid(grid, generation)
+        grid = next_generation(grid)
+        time.sleep(0.5)
+    print("\nSimulation completed after 3 generations.")
+ except KeyboardInterrupt:
+    print("\nSimulation interrupted.")    
