@@ -3,7 +3,7 @@
  print("USN    : 1AY24AI093")
  print("Section: O\n")
  def roll_die():
- return random.choice(['brain', 'shotgun', 'footsteps'])
+  return random.choice(['brain', 'shotgun', 'footsteps'])
  def bot_turn():
     brains = 0
     shotguns = 0
