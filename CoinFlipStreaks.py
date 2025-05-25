@@ -1,3 +1,6 @@
+ print("Name   : Sahil Gurav")
+ print("USN    : 1AY24AI093")
+ print("Section: O\n")
 import random
 def has_streak(coin_flips, streak_length=6):
     count = 1
