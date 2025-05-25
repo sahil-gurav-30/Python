@@ -1,3 +1,6 @@
+ print("Name   : Sahil Gurav")
+ print("USN    : 1AY24AI093")
+ print("Section: O\n")
 import time
 import copy
 grid = [
