@@ -1,7 +1,7 @@
 import random
- print("Name   : Sahil Gurav")
- print("USN    : 1AY24AI093")
- print("Section: O\n")
+print("Name   : Sahil Gurav")
+print("USN    : 1AY24AI093")
+print("Section: O\n")
 number = random.randint(1, 20)
 print("I am thinking of a number between 1 and 20.")
 guess_count= 0
