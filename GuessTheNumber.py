@@ -1,3 +1,6 @@
+ print("Name   : Sahil Gurav")
+ print("USN    : 1AY24AI093")
+ print("Section: O\n")
 import random
 number = random.randint(1, 20)
 print("I am thinking of a number between 1 and 20.")
