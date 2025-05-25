@@ -1,3 +1,6 @@
+ print("Name   : Sahil Gurav")
+ print("USN    : 1AY24AI093")
+ print("Section: O\n")
 def isValidChessBoard(board):
     """
     Checks if a given dictionary represents a valid chess board.
