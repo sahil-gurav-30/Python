@@ -1,8 +1,8 @@
+import time
+import copy
  print("Name   : Sahil Gurav")
  print("USN    : 1AY24AI093")
  print("Section: O\n")
-import time
-import copy
 grid = [
     [0, 0, 0, 0, 0, 0],  
     [0, 0, 1, 0, 0, 0],  
