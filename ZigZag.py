@@ -1,9 +1,8 @@
-
 import time
 import sys
- print("Name   : Sahil Gurav")
- print("USN    : 1AY24AI093")
- print("Section: O\n")
+print("Name   : Sahil Gurav")
+print("USN    : 1AY24AI093")
+print("Section: O\n")
 indent = 0     
 indent_increasing = True
 try:
