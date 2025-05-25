@@ -1,9 +1,9 @@
 
 import random
 import sys
- print("Name   : Sahil Gurav")
- print("USN    : 1AY24AI093")
- print("Section: O\n")
+print("Name   : Sahil Gurav")
+print("USN    : 1AY24AI093")
+print("Section: O\n")
 wins = 0
 losses = 0
 ties = 0
